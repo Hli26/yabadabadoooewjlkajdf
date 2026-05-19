@@ -1,18 +1,10 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Subsystems;
 
 import com.bylazar.configurables.annotations.Configurable;
-import com.qualcomm.robotcore.hardware.Servo;
-
-import androidx.annotation.NonNull;
-import com.pedropathing.paths.PathChain;
 
 
 import com.pedropathing.follower.Follower;
-import com.pedropathing.geometry.Pose;
-import com.pedropathing.math.Vector;
 import com.qualcomm.robotcore.hardware.*;
-
-import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
 //import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 @Configurable
