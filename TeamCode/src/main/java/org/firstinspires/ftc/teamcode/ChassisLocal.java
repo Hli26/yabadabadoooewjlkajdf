@@ -28,9 +28,6 @@ public class ChassisLocal{
 
     public ChassisLocal(HardwareMap hardwareMap) {
 
-        follower = Constants.createFollower(hardwareMap);
-
-        follower.update();
 
 
         leftFront = hardwareMap.get(DcMotorEx.class, "leftFront");
@@ -44,17 +41,7 @@ public class ChassisLocal{
 
     }
 
-    public void startTeleop() {
-        follower.startTeleopDrive();
-    }
 
-    public Follower getFollower() {
-        return follower;
-    }
-
-    public void update(){
-        follower.update();
-    }
 
     private double lastHeading = 0;
     private long lastTime = 0;
@@ -64,26 +51,6 @@ public class ChassisLocal{
     public static double HEADING_VELO_GAIN = 0.8; // 0.0 to 1.0 (Higher = more smoothing)
     public static double AIM_LOOKAHEAD = 0.12;   // Seconds of prediction
 
-    public Pose getPose() {
-        return follower.getPose();
-    }
-
-    public void setPose(Pose pose) {
-        follower.setPose(pose);
-    }
-    public Vector getVelocity() {return follower.getVelocity();}
-
-    public void followPath(PathChain path, boolean holdEnd) {
-        follower.followPath(path, holdEnd);
-    }
-
-    public void setMaxPower(double power) {
-        follower.setMaxPower(power);
-    }
-
-    public boolean isBusy() {
-        return follower.isBusy();
-    }
 
 
     public void drive(double y, double x, double r) {

@@ -38,11 +38,9 @@ public class DrivingClass extends LinearOpMode {
         );
 
         waitForStart();
-        robot.chassisLocal.startTeleop();
 
         while (opModeIsActive()) {
 
-            robot.chassisLocal.update();
             robot.chassisLocal.drive(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
 
         }
