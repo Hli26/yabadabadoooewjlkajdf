@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Subsystems;
+package org.firstinspires.ftc.teamcode.Admin.Subsystems;
 
 import com.bylazar.configurables.annotations.Configurable;
 
@@ -27,9 +27,14 @@ public class ChassisLocal{
         rightFront = hardwareMap.get(DcMotorEx.class, "rightFront");
         rightRear = hardwareMap.get(DcMotorEx.class, "rightRear");
         leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         leftRear.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightFront.setDirection(DcMotorSimple.Direction.FORWARD);
+        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightRear.setDirection(DcMotorSimple.Direction.FORWARD);
+        rightRear.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
 
     }
 

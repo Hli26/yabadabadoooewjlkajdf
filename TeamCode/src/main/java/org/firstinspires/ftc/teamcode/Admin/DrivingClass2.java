@@ -1,19 +1,20 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Admin;
 
 import com.bylazar.configurables.annotations.Configurable;
 import com.bylazar.telemetry.TelemetryManager;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.bylazar.telemetry.PanelsTelemetry;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-import org.firstinspires.ftc.teamcode.Subsystems.Robot;
-import org.firstinspires.ftc.teamcode.Subsystems.RobotActions;
+import org.firstinspires.ftc.teamcode.Admin.Subsystems.Robot;
+import org.firstinspires.ftc.teamcode.Admin.Subsystems.RobotActions;
 
 
-@TeleOp(name = "TeleOp Driving")
+@TeleOp(name = "TeleOp Driving 2")
 @Configurable
 
-public class DrivingClass extends LinearOpMode {
+public class DrivingClass2 extends LinearOpMode {
     Robot robot;
     RobotActions actions;
     private boolean grabberOpen = false;
@@ -48,12 +49,12 @@ public class DrivingClass extends LinearOpMode {
             if (gamepad1.aWasPressed()) {
                 grabberOpen = !grabberOpen;
                 if (grabberOpen) {
-                    robot.grabberClass.open();
+                    robot.grabberClass.open2();
                 } else {
-                    robot.grabberClass.close();
+                    robot.grabberClass.close2();
                 }
             }
-            telemetry.addData("Grabber servo", robot.grabberClass.ServoPosition());
+            telemetry.addData("Grabber servo", robot.grabberClass.ServoPosition2());
             telemetry.update();
 
         }
