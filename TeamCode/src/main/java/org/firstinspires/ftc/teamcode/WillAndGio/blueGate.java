@@ -1,7 +1,5 @@
 package org.firstinspires.ftc.teamcode.WillAndGio;
 
-import static org.firstinspires.ftc.teamcode.pedroPathing.Tuning.follower;
-
 import com.qualcomm.hardware.limelightvision.Limelight3A;
 import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.BezierLine;
@@ -18,6 +16,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.teamcode.Admin.Subsystems.Robot;
 import org.firstinspires.ftc.teamcode.Admin.Subsystems.RobotActions;
+import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
 @Autonomous(name = "BlueGate", group = "auto", preselectTeleOp ="BLUEEEEE b")
 public class blueGate extends OpMode {
@@ -257,6 +256,10 @@ public class blueGate extends OpMode {
                 robot.chassisLocal,
                 robot.grabberClass
         );
+
+        follower = Constants.createFollower(hardwareMap);
+        follower.setStartingPose(startPose);
+        follower.setMaxPower(NORMAL_DRIVE_POWER);
         buildPaths();
 
         telemetry.addLine("Good to go BLUE");
@@ -271,9 +274,11 @@ public class blueGate extends OpMode {
     //
     @Override
     public void loop() {
+        follower.update();
         statePathUpdate();
 
-
+        telemetry.addData("Path state", pathState);
+        telemetry.addData("Follower busy", follower.isBusy());
         telemetry.update();
     }
 }
