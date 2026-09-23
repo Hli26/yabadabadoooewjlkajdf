@@ -1,1 +1,14 @@
+@Tuner
+public static Procedure pinpointTuner() {
+    return new PinpointTuner();
+}
 
+@Tuner
+public static Procedure octoquadTuner() {
+    return new OctoQuadTuner();
+}
+
+@Tuner
+public static Procedure otosTuner() {
+    return new OTOSTuner();
+}
